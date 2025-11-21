@@ -1,0 +1,67 @@
+---
+- hosts: vmlab
+  become: yes
+  vars:
+    ansible_pkg_mgr: yum
+    ansible_yum_use_backend: yum
+    seneca_id: mdixon21
+
+  tasks:
+    - name: debug test
+      debug:
+        msg: "Running playbook on {{ inventory_hostname }}"
+
+    - name: update Apache httpd
+      yum:
+        name: httpd
+        state: latest
+        use_backend: yum
+
+    - name: install EPEL repository
+      yum:
+        name: epel-release
+        state: present
+        use_backend: yum
+
+    - name: remove tree package
+      yum:
+        name: tree
+        state: absent
+        use_backend: yum
+
+    - name: set hostname to Seneca ID
+      hostname:
+        name: "{{ seneca_id }}"
+
+    - name: create new user with sudo access
+      user:
+        name: "{{ seneca_id }}"
+        groups: wheel
+        append: yes
+        state: present
+        create_home: yes
+
+    - name: ensure .ssh directory exists for new user
+      file:
+        path: "/home/{{ seneca_id }}/.ssh"
+        state: directory
+        owner: "{{ seneca_id }}"
+        group: "{{ seneca_id }}"
+        mode: '0700'
+
+    - name: copy SSH authorized key for new user
+      copy:
+        src: ~/.ssh/id_ed25519.pub
+        dest: "/home/{{ seneca_id }}/.ssh/authorized_keys"
+        owner: "{{ seneca_id }}"
+        group: "{{ seneca_id }}"
+        mode: '0600'
+
+    - name: create lab directories
+      file:
+        path: "/home/{{ seneca_id }}/ops445/lab{{ item }}"
+        state: directory
+        owner: "{{ seneca_id }}"
+        group: "{{ seneca_id }}"
+        mode: '0755'
+      loop: "{{ range(1,9) | list }}"
