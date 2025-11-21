@@ -1,0 +1,1087 @@
+ansible-playbook [core 2.16.3]
+  config file = None
+  configured module search path = ['/home/mdixon21/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  ansible collection location = /home/mdixon21/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.12.3 (main, Aug 14 2025, 17:47:21) [GCC 13.3.0] (/usr/bin/python3)
+  jinja version = 3.1.2
+  libyaml = True
+No config file found; using defaults
+host_list declined parsing /home/mdixon21/ops445/lab-8-MikalDixon/hosts as it did not pass its verify_file() method
+script declined parsing /home/mdixon21/ops445/lab-8-MikalDixon/hosts as it did not pass its verify_file() method
+auto declined parsing /home/mdixon21/ops445/lab-8-MikalDixon/hosts as it did not pass its verify_file() method
+Parsed /home/mdixon21/ops445/lab-8-MikalDixon/hosts inventory source with ini plugin
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: config_ops445.yml ****************************************************
+1 plays in /home/mdixon21/ops445/lab-8-MikalDixon/config_ops445.yml
+
+PLAY [vmlab] *******************************************************************
+
+TASK [debug test] **************************************************************
+task path: /home/mdixon21/ops445/lab-8-MikalDixon/config_ops445.yml:11
+ok: [myvm] => {
+    "msg": "Running playbook on myvm"
+}
+
+TASK [update Apache httpd] *****************************************************
+task path: /home/mdixon21/ops445/lab-8-MikalDixon/config_ops445.yml:15
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'echo ~student && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'/home/student\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/student/.ansible/tmp `"&& mkdir "` echo /home/student/.ansible/tmp/ansible-tmp-1763700494.8302493-6818-45809221107246 `" && echo ansible-tmp-1763700494.8302493-6818-45809221107246="` echo /home/student/.ansible/tmp/ansible-tmp-1763700494.8302493-6818-45809221107246 `" ) && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'ansible-tmp-1763700494.8302493-6818-45809221107246=/home/student/.ansible/tmp/ansible-tmp-1763700494.8302493-6818-45809221107246\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/yum.py
+<myvmlab.senecapolytechnic.ca> PUT /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmp9k4q3uuh TO /home/student/.ansible/tmp/ansible-tmp-1763700494.8302493-6818-45809221107246/AnsiballZ_yum.py
+<myvmlab.senecapolytechnic.ca> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' '[myvmlab.senecapolytechnic.ca]'
+<myvmlab.senecapolytechnic.ca> (0, b'sftp> put /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmp9k4q3uuh /home/student/.ansible/tmp/ansible-tmp-1763700494.8302493-6818-45809221107246/AnsiballZ_yum.py\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'chmod u+x /home/student/.ansible/tmp/ansible-tmp-1763700494.8302493-6818-45809221107246/ /home/student/.ansible/tmp/ansible-tmp-1763700494.8302493-6818-45809221107246/AnsiballZ_yum.py && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' -tt myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-truzppccvmbnyfcjxaytatsakbzrrcls ; /usr/bin/python3 /home/student/.ansible/tmp/ansible-tmp-1763700494.8302493-6818-45809221107246/AnsiballZ_yum.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<myvmlab.senecapolytechnic.ca> (0, b'\r\n{"changed": false, "results": ["All packages providing httpd are up to date", ""], "invocation": {"module_args": {"lock_timeout": 30, "update_cache": false, "disable_excludes": null, "exclude": [], "allow_downgrade": false, "sslverify": true, "disable_gpg_check": false, "conf_file": null, "use_backend": "auto", "state": "latest", "disablerepo": [], "releasever": null, "skip_broken": false, "cacheonly": false, "autoremove": false, "download_dir": null, "enable_plugin": [], "installroot": "/", "install_weak_deps": true, "name": ["httpd"], "download_only": false, "bugfix": false, "list": null, "install_repoquery": true, "update_only": false, "disable_plugin": [], "enablerepo": [], "security": false, "validate_certs": true}}, "rc": 0, "msg": "", "changes": {"updated": [], "installed": []}}\r\n', b'Shared connection to myvmlab.senecapolytechnic.ca closed.\r\n')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'rm -f -r /home/student/.ansible/tmp/ansible-tmp-1763700494.8302493-6818-45809221107246/ > /dev/null 2>&1 && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+ok: [myvm] => {
+    "changed": false,
+    "changes": {
+        "installed": [],
+        "updated": []
+    },
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "autoremove": false,
+            "bugfix": false,
+            "cacheonly": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_dir": null,
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "install_weak_deps": true,
+            "installroot": "/",
+            "list": null,
+            "lock_timeout": 30,
+            "name": [
+                "httpd"
+            ],
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "sslverify": true,
+            "state": "latest",
+            "update_cache": false,
+            "update_only": false,
+            "use_backend": "auto",
+            "validate_certs": true
+        }
+    },
+    "msg": "",
+    "rc": 0,
+    "results": [
+        "All packages providing httpd are up to date",
+        ""
+    ]
+}
+
+TASK [install EPEL repository] *************************************************
+task path: /home/mdixon21/ops445/lab-8-MikalDixon/config_ops445.yml:21
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'echo ~student && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'/home/student\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/student/.ansible/tmp `"&& mkdir "` echo /home/student/.ansible/tmp/ansible-tmp-1763700500.321337-6830-183513778362689 `" && echo ansible-tmp-1763700500.321337-6830-183513778362689="` echo /home/student/.ansible/tmp/ansible-tmp-1763700500.321337-6830-183513778362689 `" ) && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'ansible-tmp-1763700500.321337-6830-183513778362689=/home/student/.ansible/tmp/ansible-tmp-1763700500.321337-6830-183513778362689\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/yum.py
+<myvmlab.senecapolytechnic.ca> PUT /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmpfnpvjdpy TO /home/student/.ansible/tmp/ansible-tmp-1763700500.321337-6830-183513778362689/AnsiballZ_yum.py
+<myvmlab.senecapolytechnic.ca> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' '[myvmlab.senecapolytechnic.ca]'
+<myvmlab.senecapolytechnic.ca> (0, b'sftp> put /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmpfnpvjdpy /home/student/.ansible/tmp/ansible-tmp-1763700500.321337-6830-183513778362689/AnsiballZ_yum.py\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'chmod u+x /home/student/.ansible/tmp/ansible-tmp-1763700500.321337-6830-183513778362689/ /home/student/.ansible/tmp/ansible-tmp-1763700500.321337-6830-183513778362689/AnsiballZ_yum.py && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' -tt myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-gucjpigchqqltpflhinyuuonksatyikk ; /usr/bin/python3 /home/student/.ansible/tmp/ansible-tmp-1763700500.321337-6830-183513778362689/AnsiballZ_yum.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<myvmlab.senecapolytechnic.ca> (0, b'\r\n{"invocation": {"module_args": {"lock_timeout": 30, "update_cache": false, "disable_excludes": null, "exclude": [], "allow_downgrade": false, "sslverify": true, "disable_gpg_check": false, "conf_file": null, "use_backend": "auto", "state": "present", "disablerepo": [], "releasever": null, "skip_broken": false, "cacheonly": false, "autoremove": false, "download_dir": null, "enable_plugin": [], "installroot": "/", "install_weak_deps": true, "name": ["epel-release"], "download_only": false, "bugfix": false, "list": null, "install_repoquery": true, "update_only": false, "disable_plugin": [], "enablerepo": [], "security": false, "validate_certs": true}}, "msg": "", "changed": false, "results": ["epel-release-7-11.noarch providing epel-release is already installed"], "rc": 0}\r\n', b'Shared connection to myvmlab.senecapolytechnic.ca closed.\r\n')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'rm -f -r /home/student/.ansible/tmp/ansible-tmp-1763700500.321337-6830-183513778362689/ > /dev/null 2>&1 && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+ok: [myvm] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "autoremove": false,
+            "bugfix": false,
+            "cacheonly": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_dir": null,
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "install_weak_deps": true,
+            "installroot": "/",
+            "list": null,
+            "lock_timeout": 30,
+            "name": [
+                "epel-release"
+            ],
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "sslverify": true,
+            "state": "present",
+            "update_cache": false,
+            "update_only": false,
+            "use_backend": "auto",
+            "validate_certs": true
+        }
+    },
+    "msg": "",
+    "rc": 0,
+    "results": [
+        "epel-release-7-11.noarch providing epel-release is already installed"
+    ]
+}
+
+TASK [remove tree package] *****************************************************
+task path: /home/mdixon21/ops445/lab-8-MikalDixon/config_ops445.yml:27
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'echo ~student && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'/home/student\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/student/.ansible/tmp `"&& mkdir "` echo /home/student/.ansible/tmp/ansible-tmp-1763700501.6973212-6838-262824065712065 `" && echo ansible-tmp-1763700501.6973212-6838-262824065712065="` echo /home/student/.ansible/tmp/ansible-tmp-1763700501.6973212-6838-262824065712065 `" ) && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'ansible-tmp-1763700501.6973212-6838-262824065712065=/home/student/.ansible/tmp/ansible-tmp-1763700501.6973212-6838-262824065712065\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/yum.py
+<myvmlab.senecapolytechnic.ca> PUT /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmpnid379e4 TO /home/student/.ansible/tmp/ansible-tmp-1763700501.6973212-6838-262824065712065/AnsiballZ_yum.py
+<myvmlab.senecapolytechnic.ca> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' '[myvmlab.senecapolytechnic.ca]'
+<myvmlab.senecapolytechnic.ca> (0, b'sftp> put /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmpnid379e4 /home/student/.ansible/tmp/ansible-tmp-1763700501.6973212-6838-262824065712065/AnsiballZ_yum.py\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'chmod u+x /home/student/.ansible/tmp/ansible-tmp-1763700501.6973212-6838-262824065712065/ /home/student/.ansible/tmp/ansible-tmp-1763700501.6973212-6838-262824065712065/AnsiballZ_yum.py && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' -tt myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-abiagcmmnqwtksfqsruxhovgfxxwhywa ; /usr/bin/python3 /home/student/.ansible/tmp/ansible-tmp-1763700501.6973212-6838-262824065712065/AnsiballZ_yum.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<myvmlab.senecapolytechnic.ca> (0, b'\r\n{"invocation": {"module_args": {"lock_timeout": 30, "update_cache": false, "disable_excludes": null, "exclude": [], "allow_downgrade": false, "sslverify": true, "disable_gpg_check": false, "conf_file": null, "use_backend": "auto", "state": "absent", "disablerepo": [], "releasever": null, "skip_broken": false, "cacheonly": false, "autoremove": false, "download_dir": null, "enable_plugin": [], "installroot": "/", "install_weak_deps": true, "name": ["tree"], "download_only": false, "bugfix": false, "list": null, "install_repoquery": true, "update_only": false, "disable_plugin": [], "enablerepo": [], "security": false, "validate_certs": true}}, "msg": "", "changed": false, "results": ["tree is not installed"], "rc": 0}\r\n', b'Shared connection to myvmlab.senecapolytechnic.ca closed.\r\n')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'rm -f -r /home/student/.ansible/tmp/ansible-tmp-1763700501.6973212-6838-262824065712065/ > /dev/null 2>&1 && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+ok: [myvm] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "autoremove": false,
+            "bugfix": false,
+            "cacheonly": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_dir": null,
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "install_weak_deps": true,
+            "installroot": "/",
+            "list": null,
+            "lock_timeout": 30,
+            "name": [
+                "tree"
+            ],
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "sslverify": true,
+            "state": "absent",
+            "update_cache": false,
+            "update_only": false,
+            "use_backend": "auto",
+            "validate_certs": true
+        }
+    },
+    "msg": "",
+    "rc": 0,
+    "results": [
+        "tree is not installed"
+    ]
+}
+
+TASK [set hostname to Seneca ID] ***********************************************
+task path: /home/mdixon21/ops445/lab-8-MikalDixon/config_ops445.yml:33
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'echo ~student && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'/home/student\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/student/.ansible/tmp `"&& mkdir "` echo /home/student/.ansible/tmp/ansible-tmp-1763700503.0193427-6846-229243180169015 `" && echo ansible-tmp-1763700503.0193427-6846-229243180169015="` echo /home/student/.ansible/tmp/ansible-tmp-1763700503.0193427-6846-229243180169015 `" ) && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'ansible-tmp-1763700503.0193427-6846-229243180169015=/home/student/.ansible/tmp/ansible-tmp-1763700503.0193427-6846-229243180169015\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/hostname.py
+<myvmlab.senecapolytechnic.ca> PUT /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmplrycdpmn TO /home/student/.ansible/tmp/ansible-tmp-1763700503.0193427-6846-229243180169015/AnsiballZ_hostname.py
+<myvmlab.senecapolytechnic.ca> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' '[myvmlab.senecapolytechnic.ca]'
+<myvmlab.senecapolytechnic.ca> (0, b'sftp> put /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmplrycdpmn /home/student/.ansible/tmp/ansible-tmp-1763700503.0193427-6846-229243180169015/AnsiballZ_hostname.py\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'chmod u+x /home/student/.ansible/tmp/ansible-tmp-1763700503.0193427-6846-229243180169015/ /home/student/.ansible/tmp/ansible-tmp-1763700503.0193427-6846-229243180169015/AnsiballZ_hostname.py && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' -tt myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-lgfwsffhmraijiveybrzvpnyzgxukbnj ; /usr/bin/python3 /home/student/.ansible/tmp/ansible-tmp-1763700503.0193427-6846-229243180169015/AnsiballZ_hostname.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<myvmlab.senecapolytechnic.ca> (0, b'\r\n{"changed": false, "name": "mdixon21", "ansible_facts": {"ansible_hostname": "mdixon21", "ansible_nodename": "mdixon21", "ansible_fqdn": "mdixon21", "ansible_domain": ""}, "invocation": {"module_args": {"name": "mdixon21", "use": null}}}\r\n', b'Shared connection to myvmlab.senecapolytechnic.ca closed.\r\n')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'rm -f -r /home/student/.ansible/tmp/ansible-tmp-1763700503.0193427-6846-229243180169015/ > /dev/null 2>&1 && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+ok: [myvm] => {
+    "ansible_facts": {
+        "ansible_domain": "",
+        "ansible_fqdn": "mdixon21",
+        "ansible_hostname": "mdixon21",
+        "ansible_nodename": "mdixon21"
+    },
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "name": "mdixon21",
+            "use": null
+        }
+    },
+    "name": "mdixon21"
+}
+
+TASK [create new user with sudo access] ****************************************
+task path: /home/mdixon21/ops445/lab-8-MikalDixon/config_ops445.yml:37
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'echo ~student && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'/home/student\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/student/.ansible/tmp `"&& mkdir "` echo /home/student/.ansible/tmp/ansible-tmp-1763700504.4922247-6854-205956242892753 `" && echo ansible-tmp-1763700504.4922247-6854-205956242892753="` echo /home/student/.ansible/tmp/ansible-tmp-1763700504.4922247-6854-205956242892753 `" ) && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'ansible-tmp-1763700504.4922247-6854-205956242892753=/home/student/.ansible/tmp/ansible-tmp-1763700504.4922247-6854-205956242892753\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/user.py
+<myvmlab.senecapolytechnic.ca> PUT /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmp8cda_vx0 TO /home/student/.ansible/tmp/ansible-tmp-1763700504.4922247-6854-205956242892753/AnsiballZ_user.py
+<myvmlab.senecapolytechnic.ca> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' '[myvmlab.senecapolytechnic.ca]'
+<myvmlab.senecapolytechnic.ca> (0, b'sftp> put /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmp8cda_vx0 /home/student/.ansible/tmp/ansible-tmp-1763700504.4922247-6854-205956242892753/AnsiballZ_user.py\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'chmod u+x /home/student/.ansible/tmp/ansible-tmp-1763700504.4922247-6854-205956242892753/ /home/student/.ansible/tmp/ansible-tmp-1763700504.4922247-6854-205956242892753/AnsiballZ_user.py && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' -tt myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-cvpdoepenpbufvydbvftyfdzrpocdour ; /usr/bin/python3 /home/student/.ansible/tmp/ansible-tmp-1763700504.4922247-6854-205956242892753/AnsiballZ_user.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<myvmlab.senecapolytechnic.ca> (0, b'\r\n{"name": "mdixon21", "state": "present", "append": true, "move_home": false, "changed": false, "uid": 1006, "group": 1006, "comment": "", "home": "/home/mdixon21", "shell": "/bin/bash", "groups": "wheel", "invocation": {"module_args": {"name": "mdixon21", "groups": ["wheel"], "append": true, "state": "present", "create_home": true, "non_unique": false, "force": false, "remove": false, "system": false, "move_home": false, "ssh_key_bits": 0, "ssh_key_type": "rsa", "ssh_key_comment": "ansible-generated on mdixon21", "update_password": "always", "uid": null, "group": null, "comment": null, "home": null, "shell": null, "password": null, "login_class": null, "password_expire_max": null, "password_expire_min": null, "password_expire_warn": null, "hidden": null, "seuser": null, "skeleton": null, "generate_ssh_key": null, "ssh_key_file": null, "ssh_key_passphrase": null, "expires": null, "password_lock": null, "local": null, "profile": null, "authorization": null, "role": null, "umask": null}}}\r\n', b'Shared connection to myvmlab.senecapolytechnic.ca closed.\r\n')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'rm -f -r /home/student/.ansible/tmp/ansible-tmp-1763700504.4922247-6854-205956242892753/ > /dev/null 2>&1 && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+ok: [myvm] => {
+    "append": true,
+    "changed": false,
+    "comment": "",
+    "group": 1006,
+    "groups": "wheel",
+    "home": "/home/mdixon21",
+    "invocation": {
+        "module_args": {
+            "append": true,
+            "authorization": null,
+            "comment": null,
+            "create_home": true,
+            "expires": null,
+            "force": false,
+            "generate_ssh_key": null,
+            "group": null,
+            "groups": [
+                "wheel"
+            ],
+            "hidden": null,
+            "home": null,
+            "local": null,
+            "login_class": null,
+            "move_home": false,
+            "name": "mdixon21",
+            "non_unique": false,
+            "password": null,
+            "password_expire_max": null,
+            "password_expire_min": null,
+            "password_expire_warn": null,
+            "password_lock": null,
+            "profile": null,
+            "remove": false,
+            "role": null,
+            "seuser": null,
+            "shell": null,
+            "skeleton": null,
+            "ssh_key_bits": 0,
+            "ssh_key_comment": "ansible-generated on mdixon21",
+            "ssh_key_file": null,
+            "ssh_key_passphrase": null,
+            "ssh_key_type": "rsa",
+            "state": "present",
+            "system": false,
+            "uid": null,
+            "umask": null,
+            "update_password": "always"
+        }
+    },
+    "move_home": false,
+    "name": "mdixon21",
+    "shell": "/bin/bash",
+    "state": "present",
+    "uid": 1006
+}
+
+TASK [ensure .ssh directory exists for new user] *******************************
+task path: /home/mdixon21/ops445/lab-8-MikalDixon/config_ops445.yml:45
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'echo ~student && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'/home/student\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/student/.ansible/tmp `"&& mkdir "` echo /home/student/.ansible/tmp/ansible-tmp-1763700505.6076698-6862-193890048777124 `" && echo ansible-tmp-1763700505.6076698-6862-193890048777124="` echo /home/student/.ansible/tmp/ansible-tmp-1763700505.6076698-6862-193890048777124 `" ) && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'ansible-tmp-1763700505.6076698-6862-193890048777124=/home/student/.ansible/tmp/ansible-tmp-1763700505.6076698-6862-193890048777124\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/file.py
+<myvmlab.senecapolytechnic.ca> PUT /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmpqlsw7soc TO /home/student/.ansible/tmp/ansible-tmp-1763700505.6076698-6862-193890048777124/AnsiballZ_file.py
+<myvmlab.senecapolytechnic.ca> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' '[myvmlab.senecapolytechnic.ca]'
+<myvmlab.senecapolytechnic.ca> (0, b'sftp> put /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmpqlsw7soc /home/student/.ansible/tmp/ansible-tmp-1763700505.6076698-6862-193890048777124/AnsiballZ_file.py\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'chmod u+x /home/student/.ansible/tmp/ansible-tmp-1763700505.6076698-6862-193890048777124/ /home/student/.ansible/tmp/ansible-tmp-1763700505.6076698-6862-193890048777124/AnsiballZ_file.py && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' -tt myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-fxbnguepvbkxgwamkigokcyfyyixuhwc ; /usr/bin/python3 /home/student/.ansible/tmp/ansible-tmp-1763700505.6076698-6862-193890048777124/AnsiballZ_file.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<myvmlab.senecapolytechnic.ca> (0, b'\r\n{"path": "/home/mdixon21/.ssh", "changed": true, "diff": {"before": {"path": "/home/mdixon21/.ssh", "state": "absent", "owner": 0, "group": 0, "mode": "0755"}, "after": {"path": "/home/mdixon21/.ssh", "state": "directory", "owner": 1006, "group": 1006, "mode": "0700"}}, "uid": 1006, "gid": 1006, "owner": "mdixon21", "group": "mdixon21", "mode": "0700", "state": "directory", "size": 6, "invocation": {"module_args": {"path": "/home/mdixon21/.ssh", "state": "directory", "owner": "mdixon21", "group": "mdixon21", "mode": "0700", "recurse": false, "force": false, "follow": true, "modification_time_format": "%Y%m%d%H%M.%S", "access_time_format": "%Y%m%d%H%M.%S", "unsafe_writes": false, "_original_basename": null, "_diff_peek": null, "src": null, "modification_time": null, "access_time": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null}}}\r\n', b'Shared connection to myvmlab.senecapolytechnic.ca closed.\r\n')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'rm -f -r /home/student/.ansible/tmp/ansible-tmp-1763700505.6076698-6862-193890048777124/ > /dev/null 2>&1 && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+changed: [myvm] => {
+    "changed": true,
+    "diff": {
+        "after": {
+            "group": 1006,
+            "mode": "0700",
+            "owner": 1006,
+            "path": "/home/mdixon21/.ssh",
+            "state": "directory"
+        },
+        "before": {
+            "group": 0,
+            "mode": "0755",
+            "owner": 0,
+            "path": "/home/mdixon21/.ssh",
+            "state": "absent"
+        }
+    },
+    "gid": 1006,
+    "group": "mdixon21",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "follow": true,
+            "force": false,
+            "group": "mdixon21",
+            "mode": "0700",
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": "mdixon21",
+            "path": "/home/mdixon21/.ssh",
+            "recurse": false,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": false
+        }
+    },
+    "mode": "0700",
+    "owner": "mdixon21",
+    "path": "/home/mdixon21/.ssh",
+    "size": 6,
+    "state": "directory",
+    "uid": 1006
+}
+
+TASK [copy SSH authorized key for new user] ************************************
+task path: /home/mdixon21/ops445/lab-8-MikalDixon/config_ops445.yml:53
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'echo ~student && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'/home/student\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/student/.ansible/tmp `"&& mkdir "` echo /home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927 `" && echo ansible-tmp-1763700506.6488063-6870-51285957092927="` echo /home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927 `" ) && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'ansible-tmp-1763700506.6488063-6870-51285957092927=/home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/stat.py
+<myvmlab.senecapolytechnic.ca> PUT /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmpuv2ob5ad TO /home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927/AnsiballZ_stat.py
+<myvmlab.senecapolytechnic.ca> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' '[myvmlab.senecapolytechnic.ca]'
+<myvmlab.senecapolytechnic.ca> (0, b'sftp> put /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmpuv2ob5ad /home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927/AnsiballZ_stat.py\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'chmod u+x /home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927/ /home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927/AnsiballZ_stat.py && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' -tt myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-wnyxroizawmgtbhwlovyilwegiyepiif ; /usr/bin/python3 /home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927/AnsiballZ_stat.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<myvmlab.senecapolytechnic.ca> (0, b'\r\n{"changed": false, "stat": {"exists": false}, "invocation": {"module_args": {"path": "/home/mdixon21/.ssh/authorized_keys", "follow": false, "get_checksum": true, "checksum_algorithm": "sha1", "get_mime": true, "get_attributes": true}}}\r\n', b'Shared connection to myvmlab.senecapolytechnic.ca closed.\r\n')
+<myvmlab.senecapolytechnic.ca> PUT /home/mdixon21/.ssh/id_ed25519.pub TO /home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927/source
+<myvmlab.senecapolytechnic.ca> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' '[myvmlab.senecapolytechnic.ca]'
+<myvmlab.senecapolytechnic.ca> (0, b'sftp> put /home/mdixon21/.ssh/id_ed25519.pub /home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927/source\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'chmod u+x /home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927/ /home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927/source && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/copy.py
+<myvmlab.senecapolytechnic.ca> PUT /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmpcs17x0b2 TO /home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927/AnsiballZ_copy.py
+<myvmlab.senecapolytechnic.ca> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' '[myvmlab.senecapolytechnic.ca]'
+<myvmlab.senecapolytechnic.ca> (0, b'sftp> put /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmpcs17x0b2 /home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927/AnsiballZ_copy.py\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'chmod u+x /home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927/ /home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927/AnsiballZ_copy.py && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' -tt myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-ylljzdsfimjquczadptnwyzxzhpxqjvp ; /usr/bin/python3 /home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927/AnsiballZ_copy.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<myvmlab.senecapolytechnic.ca> (0, b'\r\n{"dest": "/home/mdixon21/.ssh/authorized_keys", "src": "/home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927/source", "md5sum": "966909863d7027c983266db8af468685", "checksum": "249ba5494ae1d72d51a6986fc5775737031cd8b7", "changed": true, "uid": 1006, "gid": 1006, "owner": "mdixon21", "group": "mdixon21", "mode": "0600", "state": "file", "size": 115, "invocation": {"module_args": {"src": "/home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927/source", "dest": "/home/mdixon21/.ssh/authorized_keys", "owner": "mdixon21", "group": "mdixon21", "mode": "0600", "_original_basename": "id_ed25519.pub", "follow": false, "checksum": "249ba5494ae1d72d51a6986fc5775737031cd8b7", "backup": false, "force": true, "unsafe_writes": false, "content": null, "validate": null, "directory_mode": null, "remote_src": null, "local_follow": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null}}}\r\n', b'Shared connection to myvmlab.senecapolytechnic.ca closed.\r\n')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'rm -f -r /home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927/ > /dev/null 2>&1 && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+changed: [myvm] => {
+    "changed": true,
+    "checksum": "249ba5494ae1d72d51a6986fc5775737031cd8b7",
+    "dest": "/home/mdixon21/.ssh/authorized_keys",
+    "diff": [],
+    "gid": 1006,
+    "group": "mdixon21",
+    "invocation": {
+        "module_args": {
+            "_original_basename": "id_ed25519.pub",
+            "attributes": null,
+            "backup": false,
+            "checksum": "249ba5494ae1d72d51a6986fc5775737031cd8b7",
+            "content": null,
+            "dest": "/home/mdixon21/.ssh/authorized_keys",
+            "directory_mode": null,
+            "follow": false,
+            "force": true,
+            "group": "mdixon21",
+            "local_follow": null,
+            "mode": "0600",
+            "owner": "mdixon21",
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": "/home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927/source",
+            "unsafe_writes": false,
+            "validate": null
+        }
+    },
+    "md5sum": "966909863d7027c983266db8af468685",
+    "mode": "0600",
+    "owner": "mdixon21",
+    "size": 115,
+    "src": "/home/student/.ansible/tmp/ansible-tmp-1763700506.6488063-6870-51285957092927/source",
+    "state": "file",
+    "uid": 1006
+}
+
+TASK [create lab directories] **************************************************
+task path: /home/mdixon21/ops445/lab-8-MikalDixon/config_ops445.yml:61
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'echo ~student && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'/home/student\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/student/.ansible/tmp `"&& mkdir "` echo /home/student/.ansible/tmp/ansible-tmp-1763700508.7469869-6885-201022201235327 `" && echo ansible-tmp-1763700508.7469869-6885-201022201235327="` echo /home/student/.ansible/tmp/ansible-tmp-1763700508.7469869-6885-201022201235327 `" ) && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'ansible-tmp-1763700508.7469869-6885-201022201235327=/home/student/.ansible/tmp/ansible-tmp-1763700508.7469869-6885-201022201235327\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/file.py
+<myvmlab.senecapolytechnic.ca> PUT /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmplwtxt8uz TO /home/student/.ansible/tmp/ansible-tmp-1763700508.7469869-6885-201022201235327/AnsiballZ_file.py
+<myvmlab.senecapolytechnic.ca> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' '[myvmlab.senecapolytechnic.ca]'
+<myvmlab.senecapolytechnic.ca> (0, b'sftp> put /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmplwtxt8uz /home/student/.ansible/tmp/ansible-tmp-1763700508.7469869-6885-201022201235327/AnsiballZ_file.py\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'chmod u+x /home/student/.ansible/tmp/ansible-tmp-1763700508.7469869-6885-201022201235327/ /home/student/.ansible/tmp/ansible-tmp-1763700508.7469869-6885-201022201235327/AnsiballZ_file.py && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' -tt myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-dqhbfygplbgfrjrvhotvukvumhfjyadr ; /usr/bin/python3 /home/student/.ansible/tmp/ansible-tmp-1763700508.7469869-6885-201022201235327/AnsiballZ_file.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<myvmlab.senecapolytechnic.ca> (0, b'\r\n{"path": "/home/mdixon21/ops445/lab1", "changed": true, "diff": {"before": {"path": "/home/mdixon21/ops445/lab1", "state": "absent", "owner": 0, "group": 0}, "after": {"path": "/home/mdixon21/ops445/lab1", "state": "directory", "owner": 1006, "group": 1006}}, "uid": 1006, "gid": 1006, "owner": "mdixon21", "group": "mdixon21", "mode": "0755", "state": "directory", "size": 6, "invocation": {"module_args": {"path": "/home/mdixon21/ops445/lab1", "state": "directory", "owner": "mdixon21", "group": "mdixon21", "mode": "0755", "recurse": false, "force": false, "follow": true, "modification_time_format": "%Y%m%d%H%M.%S", "access_time_format": "%Y%m%d%H%M.%S", "unsafe_writes": false, "_original_basename": null, "_diff_peek": null, "src": null, "modification_time": null, "access_time": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null}}}\r\n', b'Shared connection to myvmlab.senecapolytechnic.ca closed.\r\n')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'rm -f -r /home/student/.ansible/tmp/ansible-tmp-1763700508.7469869-6885-201022201235327/ > /dev/null 2>&1 && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+changed: [myvm] => (item=1) => {
+    "ansible_loop_var": "item",
+    "changed": true,
+    "diff": {
+        "after": {
+            "group": 1006,
+            "owner": 1006,
+            "path": "/home/mdixon21/ops445/lab1",
+            "state": "directory"
+        },
+        "before": {
+            "group": 0,
+            "owner": 0,
+            "path": "/home/mdixon21/ops445/lab1",
+            "state": "absent"
+        }
+    },
+    "gid": 1006,
+    "group": "mdixon21",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "follow": true,
+            "force": false,
+            "group": "mdixon21",
+            "mode": "0755",
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": "mdixon21",
+            "path": "/home/mdixon21/ops445/lab1",
+            "recurse": false,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": false
+        }
+    },
+    "item": 1,
+    "mode": "0755",
+    "owner": "mdixon21",
+    "path": "/home/mdixon21/ops445/lab1",
+    "size": 6,
+    "state": "directory",
+    "uid": 1006
+}
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'echo ~student && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'/home/student\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/student/.ansible/tmp `"&& mkdir "` echo /home/student/.ansible/tmp/ansible-tmp-1763700509.7514215-6885-15775724994765 `" && echo ansible-tmp-1763700509.7514215-6885-15775724994765="` echo /home/student/.ansible/tmp/ansible-tmp-1763700509.7514215-6885-15775724994765 `" ) && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'ansible-tmp-1763700509.7514215-6885-15775724994765=/home/student/.ansible/tmp/ansible-tmp-1763700509.7514215-6885-15775724994765\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/file.py
+<myvmlab.senecapolytechnic.ca> PUT /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmp4jl87fyk TO /home/student/.ansible/tmp/ansible-tmp-1763700509.7514215-6885-15775724994765/AnsiballZ_file.py
+<myvmlab.senecapolytechnic.ca> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' '[myvmlab.senecapolytechnic.ca]'
+<myvmlab.senecapolytechnic.ca> (0, b'sftp> put /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmp4jl87fyk /home/student/.ansible/tmp/ansible-tmp-1763700509.7514215-6885-15775724994765/AnsiballZ_file.py\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'chmod u+x /home/student/.ansible/tmp/ansible-tmp-1763700509.7514215-6885-15775724994765/ /home/student/.ansible/tmp/ansible-tmp-1763700509.7514215-6885-15775724994765/AnsiballZ_file.py && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' -tt myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-kjqmxyyogceokdbqsjbufjalaobfeldp ; /usr/bin/python3 /home/student/.ansible/tmp/ansible-tmp-1763700509.7514215-6885-15775724994765/AnsiballZ_file.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<myvmlab.senecapolytechnic.ca> (0, b'\r\n{"path": "/home/mdixon21/ops445/lab2", "changed": true, "diff": {"before": {"path": "/home/mdixon21/ops445/lab2", "state": "absent", "owner": 0, "group": 0}, "after": {"path": "/home/mdixon21/ops445/lab2", "state": "directory", "owner": 1006, "group": 1006}}, "uid": 1006, "gid": 1006, "owner": "mdixon21", "group": "mdixon21", "mode": "0755", "state": "directory", "size": 6, "invocation": {"module_args": {"path": "/home/mdixon21/ops445/lab2", "state": "directory", "owner": "mdixon21", "group": "mdixon21", "mode": "0755", "recurse": false, "force": false, "follow": true, "modification_time_format": "%Y%m%d%H%M.%S", "access_time_format": "%Y%m%d%H%M.%S", "unsafe_writes": false, "_original_basename": null, "_diff_peek": null, "src": null, "modification_time": null, "access_time": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null}}}\r\n', b'Shared connection to myvmlab.senecapolytechnic.ca closed.\r\n')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'rm -f -r /home/student/.ansible/tmp/ansible-tmp-1763700509.7514215-6885-15775724994765/ > /dev/null 2>&1 && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+changed: [myvm] => (item=2) => {
+    "ansible_loop_var": "item",
+    "changed": true,
+    "diff": {
+        "after": {
+            "group": 1006,
+            "owner": 1006,
+            "path": "/home/mdixon21/ops445/lab2",
+            "state": "directory"
+        },
+        "before": {
+            "group": 0,
+            "owner": 0,
+            "path": "/home/mdixon21/ops445/lab2",
+            "state": "absent"
+        }
+    },
+    "gid": 1006,
+    "group": "mdixon21",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "follow": true,
+            "force": false,
+            "group": "mdixon21",
+            "mode": "0755",
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": "mdixon21",
+            "path": "/home/mdixon21/ops445/lab2",
+            "recurse": false,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": false
+        }
+    },
+    "item": 2,
+    "mode": "0755",
+    "owner": "mdixon21",
+    "path": "/home/mdixon21/ops445/lab2",
+    "size": 6,
+    "state": "directory",
+    "uid": 1006
+}
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'echo ~student && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'/home/student\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/student/.ansible/tmp `"&& mkdir "` echo /home/student/.ansible/tmp/ansible-tmp-1763700510.7387526-6885-85283193723187 `" && echo ansible-tmp-1763700510.7387526-6885-85283193723187="` echo /home/student/.ansible/tmp/ansible-tmp-1763700510.7387526-6885-85283193723187 `" ) && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'ansible-tmp-1763700510.7387526-6885-85283193723187=/home/student/.ansible/tmp/ansible-tmp-1763700510.7387526-6885-85283193723187\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/file.py
+<myvmlab.senecapolytechnic.ca> PUT /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmpxo3gogkv TO /home/student/.ansible/tmp/ansible-tmp-1763700510.7387526-6885-85283193723187/AnsiballZ_file.py
+<myvmlab.senecapolytechnic.ca> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' '[myvmlab.senecapolytechnic.ca]'
+<myvmlab.senecapolytechnic.ca> (0, b'sftp> put /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmpxo3gogkv /home/student/.ansible/tmp/ansible-tmp-1763700510.7387526-6885-85283193723187/AnsiballZ_file.py\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'chmod u+x /home/student/.ansible/tmp/ansible-tmp-1763700510.7387526-6885-85283193723187/ /home/student/.ansible/tmp/ansible-tmp-1763700510.7387526-6885-85283193723187/AnsiballZ_file.py && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' -tt myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-kamscxxlnnvfmrwvqljnngyasqyqkxru ; /usr/bin/python3 /home/student/.ansible/tmp/ansible-tmp-1763700510.7387526-6885-85283193723187/AnsiballZ_file.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<myvmlab.senecapolytechnic.ca> (0, b'\r\n{"path": "/home/mdixon21/ops445/lab3", "changed": true, "diff": {"before": {"path": "/home/mdixon21/ops445/lab3", "state": "absent", "owner": 0, "group": 0}, "after": {"path": "/home/mdixon21/ops445/lab3", "state": "directory", "owner": 1006, "group": 1006}}, "uid": 1006, "gid": 1006, "owner": "mdixon21", "group": "mdixon21", "mode": "0755", "state": "directory", "size": 6, "invocation": {"module_args": {"path": "/home/mdixon21/ops445/lab3", "state": "directory", "owner": "mdixon21", "group": "mdixon21", "mode": "0755", "recurse": false, "force": false, "follow": true, "modification_time_format": "%Y%m%d%H%M.%S", "access_time_format": "%Y%m%d%H%M.%S", "unsafe_writes": false, "_original_basename": null, "_diff_peek": null, "src": null, "modification_time": null, "access_time": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null}}}\r\n', b'Shared connection to myvmlab.senecapolytechnic.ca closed.\r\n')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'rm -f -r /home/student/.ansible/tmp/ansible-tmp-1763700510.7387526-6885-85283193723187/ > /dev/null 2>&1 && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+changed: [myvm] => (item=3) => {
+    "ansible_loop_var": "item",
+    "changed": true,
+    "diff": {
+        "after": {
+            "group": 1006,
+            "owner": 1006,
+            "path": "/home/mdixon21/ops445/lab3",
+            "state": "directory"
+        },
+        "before": {
+            "group": 0,
+            "owner": 0,
+            "path": "/home/mdixon21/ops445/lab3",
+            "state": "absent"
+        }
+    },
+    "gid": 1006,
+    "group": "mdixon21",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "follow": true,
+            "force": false,
+            "group": "mdixon21",
+            "mode": "0755",
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": "mdixon21",
+            "path": "/home/mdixon21/ops445/lab3",
+            "recurse": false,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": false
+        }
+    },
+    "item": 3,
+    "mode": "0755",
+    "owner": "mdixon21",
+    "path": "/home/mdixon21/ops445/lab3",
+    "size": 6,
+    "state": "directory",
+    "uid": 1006
+}
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'echo ~student && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'/home/student\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/student/.ansible/tmp `"&& mkdir "` echo /home/student/.ansible/tmp/ansible-tmp-1763700511.7275426-6885-140604439282250 `" && echo ansible-tmp-1763700511.7275426-6885-140604439282250="` echo /home/student/.ansible/tmp/ansible-tmp-1763700511.7275426-6885-140604439282250 `" ) && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'ansible-tmp-1763700511.7275426-6885-140604439282250=/home/student/.ansible/tmp/ansible-tmp-1763700511.7275426-6885-140604439282250\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/file.py
+<myvmlab.senecapolytechnic.ca> PUT /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmpznmica3d TO /home/student/.ansible/tmp/ansible-tmp-1763700511.7275426-6885-140604439282250/AnsiballZ_file.py
+<myvmlab.senecapolytechnic.ca> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' '[myvmlab.senecapolytechnic.ca]'
+<myvmlab.senecapolytechnic.ca> (0, b'sftp> put /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmpznmica3d /home/student/.ansible/tmp/ansible-tmp-1763700511.7275426-6885-140604439282250/AnsiballZ_file.py\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'chmod u+x /home/student/.ansible/tmp/ansible-tmp-1763700511.7275426-6885-140604439282250/ /home/student/.ansible/tmp/ansible-tmp-1763700511.7275426-6885-140604439282250/AnsiballZ_file.py && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' -tt myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-dvqzslyirgegogecddqptpzjzsthtmff ; /usr/bin/python3 /home/student/.ansible/tmp/ansible-tmp-1763700511.7275426-6885-140604439282250/AnsiballZ_file.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<myvmlab.senecapolytechnic.ca> (0, b'\r\n{"path": "/home/mdixon21/ops445/lab4", "changed": true, "diff": {"before": {"path": "/home/mdixon21/ops445/lab4", "state": "absent", "owner": 0, "group": 0}, "after": {"path": "/home/mdixon21/ops445/lab4", "state": "directory", "owner": 1006, "group": 1006}}, "uid": 1006, "gid": 1006, "owner": "mdixon21", "group": "mdixon21", "mode": "0755", "state": "directory", "size": 6, "invocation": {"module_args": {"path": "/home/mdixon21/ops445/lab4", "state": "directory", "owner": "mdixon21", "group": "mdixon21", "mode": "0755", "recurse": false, "force": false, "follow": true, "modification_time_format": "%Y%m%d%H%M.%S", "access_time_format": "%Y%m%d%H%M.%S", "unsafe_writes": false, "_original_basename": null, "_diff_peek": null, "src": null, "modification_time": null, "access_time": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null}}}\r\n', b'Shared connection to myvmlab.senecapolytechnic.ca closed.\r\n')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'rm -f -r /home/student/.ansible/tmp/ansible-tmp-1763700511.7275426-6885-140604439282250/ > /dev/null 2>&1 && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+changed: [myvm] => (item=4) => {
+    "ansible_loop_var": "item",
+    "changed": true,
+    "diff": {
+        "after": {
+            "group": 1006,
+            "owner": 1006,
+            "path": "/home/mdixon21/ops445/lab4",
+            "state": "directory"
+        },
+        "before": {
+            "group": 0,
+            "owner": 0,
+            "path": "/home/mdixon21/ops445/lab4",
+            "state": "absent"
+        }
+    },
+    "gid": 1006,
+    "group": "mdixon21",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "follow": true,
+            "force": false,
+            "group": "mdixon21",
+            "mode": "0755",
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": "mdixon21",
+            "path": "/home/mdixon21/ops445/lab4",
+            "recurse": false,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": false
+        }
+    },
+    "item": 4,
+    "mode": "0755",
+    "owner": "mdixon21",
+    "path": "/home/mdixon21/ops445/lab4",
+    "size": 6,
+    "state": "directory",
+    "uid": 1006
+}
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'echo ~student && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'/home/student\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/student/.ansible/tmp `"&& mkdir "` echo /home/student/.ansible/tmp/ansible-tmp-1763700512.7114398-6885-26147353987961 `" && echo ansible-tmp-1763700512.7114398-6885-26147353987961="` echo /home/student/.ansible/tmp/ansible-tmp-1763700512.7114398-6885-26147353987961 `" ) && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'ansible-tmp-1763700512.7114398-6885-26147353987961=/home/student/.ansible/tmp/ansible-tmp-1763700512.7114398-6885-26147353987961\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/file.py
+<myvmlab.senecapolytechnic.ca> PUT /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmpypjrbft3 TO /home/student/.ansible/tmp/ansible-tmp-1763700512.7114398-6885-26147353987961/AnsiballZ_file.py
+<myvmlab.senecapolytechnic.ca> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' '[myvmlab.senecapolytechnic.ca]'
+<myvmlab.senecapolytechnic.ca> (0, b'sftp> put /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmpypjrbft3 /home/student/.ansible/tmp/ansible-tmp-1763700512.7114398-6885-26147353987961/AnsiballZ_file.py\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'chmod u+x /home/student/.ansible/tmp/ansible-tmp-1763700512.7114398-6885-26147353987961/ /home/student/.ansible/tmp/ansible-tmp-1763700512.7114398-6885-26147353987961/AnsiballZ_file.py && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' -tt myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-vdojecyrvghhkgskbpctmvzrvgrqsijl ; /usr/bin/python3 /home/student/.ansible/tmp/ansible-tmp-1763700512.7114398-6885-26147353987961/AnsiballZ_file.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<myvmlab.senecapolytechnic.ca> (0, b'\r\n{"path": "/home/mdixon21/ops445/lab5", "changed": true, "diff": {"before": {"path": "/home/mdixon21/ops445/lab5", "state": "absent", "owner": 0, "group": 0}, "after": {"path": "/home/mdixon21/ops445/lab5", "state": "directory", "owner": 1006, "group": 1006}}, "uid": 1006, "gid": 1006, "owner": "mdixon21", "group": "mdixon21", "mode": "0755", "state": "directory", "size": 6, "invocation": {"module_args": {"path": "/home/mdixon21/ops445/lab5", "state": "directory", "owner": "mdixon21", "group": "mdixon21", "mode": "0755", "recurse": false, "force": false, "follow": true, "modification_time_format": "%Y%m%d%H%M.%S", "access_time_format": "%Y%m%d%H%M.%S", "unsafe_writes": false, "_original_basename": null, "_diff_peek": null, "src": null, "modification_time": null, "access_time": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null}}}\r\n', b'Shared connection to myvmlab.senecapolytechnic.ca closed.\r\n')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'rm -f -r /home/student/.ansible/tmp/ansible-tmp-1763700512.7114398-6885-26147353987961/ > /dev/null 2>&1 && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+changed: [myvm] => (item=5) => {
+    "ansible_loop_var": "item",
+    "changed": true,
+    "diff": {
+        "after": {
+            "group": 1006,
+            "owner": 1006,
+            "path": "/home/mdixon21/ops445/lab5",
+            "state": "directory"
+        },
+        "before": {
+            "group": 0,
+            "owner": 0,
+            "path": "/home/mdixon21/ops445/lab5",
+            "state": "absent"
+        }
+    },
+    "gid": 1006,
+    "group": "mdixon21",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "follow": true,
+            "force": false,
+            "group": "mdixon21",
+            "mode": "0755",
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": "mdixon21",
+            "path": "/home/mdixon21/ops445/lab5",
+            "recurse": false,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": false
+        }
+    },
+    "item": 5,
+    "mode": "0755",
+    "owner": "mdixon21",
+    "path": "/home/mdixon21/ops445/lab5",
+    "size": 6,
+    "state": "directory",
+    "uid": 1006
+}
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'echo ~student && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'/home/student\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/student/.ansible/tmp `"&& mkdir "` echo /home/student/.ansible/tmp/ansible-tmp-1763700513.699779-6885-226396213168920 `" && echo ansible-tmp-1763700513.699779-6885-226396213168920="` echo /home/student/.ansible/tmp/ansible-tmp-1763700513.699779-6885-226396213168920 `" ) && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'ansible-tmp-1763700513.699779-6885-226396213168920=/home/student/.ansible/tmp/ansible-tmp-1763700513.699779-6885-226396213168920\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/file.py
+<myvmlab.senecapolytechnic.ca> PUT /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmp_ac1s7xi TO /home/student/.ansible/tmp/ansible-tmp-1763700513.699779-6885-226396213168920/AnsiballZ_file.py
+<myvmlab.senecapolytechnic.ca> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' '[myvmlab.senecapolytechnic.ca]'
+<myvmlab.senecapolytechnic.ca> (0, b'sftp> put /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmp_ac1s7xi /home/student/.ansible/tmp/ansible-tmp-1763700513.699779-6885-226396213168920/AnsiballZ_file.py\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'chmod u+x /home/student/.ansible/tmp/ansible-tmp-1763700513.699779-6885-226396213168920/ /home/student/.ansible/tmp/ansible-tmp-1763700513.699779-6885-226396213168920/AnsiballZ_file.py && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' -tt myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-mrecerjecedawlkbmnnkrocblqceytsi ; /usr/bin/python3 /home/student/.ansible/tmp/ansible-tmp-1763700513.699779-6885-226396213168920/AnsiballZ_file.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<myvmlab.senecapolytechnic.ca> (0, b'\r\n{"path": "/home/mdixon21/ops445/lab6", "changed": true, "diff": {"before": {"path": "/home/mdixon21/ops445/lab6", "state": "absent", "owner": 0, "group": 0}, "after": {"path": "/home/mdixon21/ops445/lab6", "state": "directory", "owner": 1006, "group": 1006}}, "uid": 1006, "gid": 1006, "owner": "mdixon21", "group": "mdixon21", "mode": "0755", "state": "directory", "size": 6, "invocation": {"module_args": {"path": "/home/mdixon21/ops445/lab6", "state": "directory", "owner": "mdixon21", "group": "mdixon21", "mode": "0755", "recurse": false, "force": false, "follow": true, "modification_time_format": "%Y%m%d%H%M.%S", "access_time_format": "%Y%m%d%H%M.%S", "unsafe_writes": false, "_original_basename": null, "_diff_peek": null, "src": null, "modification_time": null, "access_time": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null}}}\r\n', b'Shared connection to myvmlab.senecapolytechnic.ca closed.\r\n')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'rm -f -r /home/student/.ansible/tmp/ansible-tmp-1763700513.699779-6885-226396213168920/ > /dev/null 2>&1 && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+changed: [myvm] => (item=6) => {
+    "ansible_loop_var": "item",
+    "changed": true,
+    "diff": {
+        "after": {
+            "group": 1006,
+            "owner": 1006,
+            "path": "/home/mdixon21/ops445/lab6",
+            "state": "directory"
+        },
+        "before": {
+            "group": 0,
+            "owner": 0,
+            "path": "/home/mdixon21/ops445/lab6",
+            "state": "absent"
+        }
+    },
+    "gid": 1006,
+    "group": "mdixon21",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "follow": true,
+            "force": false,
+            "group": "mdixon21",
+            "mode": "0755",
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": "mdixon21",
+            "path": "/home/mdixon21/ops445/lab6",
+            "recurse": false,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": false
+        }
+    },
+    "item": 6,
+    "mode": "0755",
+    "owner": "mdixon21",
+    "path": "/home/mdixon21/ops445/lab6",
+    "size": 6,
+    "state": "directory",
+    "uid": 1006
+}
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'echo ~student && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'/home/student\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/student/.ansible/tmp `"&& mkdir "` echo /home/student/.ansible/tmp/ansible-tmp-1763700514.686612-6885-113584663756363 `" && echo ansible-tmp-1763700514.686612-6885-113584663756363="` echo /home/student/.ansible/tmp/ansible-tmp-1763700514.686612-6885-113584663756363 `" ) && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'ansible-tmp-1763700514.686612-6885-113584663756363=/home/student/.ansible/tmp/ansible-tmp-1763700514.686612-6885-113584663756363\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/file.py
+<myvmlab.senecapolytechnic.ca> PUT /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmp8clfgzxi TO /home/student/.ansible/tmp/ansible-tmp-1763700514.686612-6885-113584663756363/AnsiballZ_file.py
+<myvmlab.senecapolytechnic.ca> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' '[myvmlab.senecapolytechnic.ca]'
+<myvmlab.senecapolytechnic.ca> (0, b'sftp> put /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmp8clfgzxi /home/student/.ansible/tmp/ansible-tmp-1763700514.686612-6885-113584663756363/AnsiballZ_file.py\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'chmod u+x /home/student/.ansible/tmp/ansible-tmp-1763700514.686612-6885-113584663756363/ /home/student/.ansible/tmp/ansible-tmp-1763700514.686612-6885-113584663756363/AnsiballZ_file.py && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' -tt myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-tjexsvfyrbmobprxmjgfozedpcbxxnsy ; /usr/bin/python3 /home/student/.ansible/tmp/ansible-tmp-1763700514.686612-6885-113584663756363/AnsiballZ_file.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<myvmlab.senecapolytechnic.ca> (0, b'\r\n{"path": "/home/mdixon21/ops445/lab7", "changed": true, "diff": {"before": {"path": "/home/mdixon21/ops445/lab7", "state": "absent", "owner": 0, "group": 0}, "after": {"path": "/home/mdixon21/ops445/lab7", "state": "directory", "owner": 1006, "group": 1006}}, "uid": 1006, "gid": 1006, "owner": "mdixon21", "group": "mdixon21", "mode": "0755", "state": "directory", "size": 6, "invocation": {"module_args": {"path": "/home/mdixon21/ops445/lab7", "state": "directory", "owner": "mdixon21", "group": "mdixon21", "mode": "0755", "recurse": false, "force": false, "follow": true, "modification_time_format": "%Y%m%d%H%M.%S", "access_time_format": "%Y%m%d%H%M.%S", "unsafe_writes": false, "_original_basename": null, "_diff_peek": null, "src": null, "modification_time": null, "access_time": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null}}}\r\n', b'Shared connection to myvmlab.senecapolytechnic.ca closed.\r\n')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'rm -f -r /home/student/.ansible/tmp/ansible-tmp-1763700514.686612-6885-113584663756363/ > /dev/null 2>&1 && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+changed: [myvm] => (item=7) => {
+    "ansible_loop_var": "item",
+    "changed": true,
+    "diff": {
+        "after": {
+            "group": 1006,
+            "owner": 1006,
+            "path": "/home/mdixon21/ops445/lab7",
+            "state": "directory"
+        },
+        "before": {
+            "group": 0,
+            "owner": 0,
+            "path": "/home/mdixon21/ops445/lab7",
+            "state": "absent"
+        }
+    },
+    "gid": 1006,
+    "group": "mdixon21",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "follow": true,
+            "force": false,
+            "group": "mdixon21",
+            "mode": "0755",
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": "mdixon21",
+            "path": "/home/mdixon21/ops445/lab7",
+            "recurse": false,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": false
+        }
+    },
+    "item": 7,
+    "mode": "0755",
+    "owner": "mdixon21",
+    "path": "/home/mdixon21/ops445/lab7",
+    "size": 6,
+    "state": "directory",
+    "uid": 1006
+}
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'echo ~student && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'/home/student\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/student/.ansible/tmp `"&& mkdir "` echo /home/student/.ansible/tmp/ansible-tmp-1763700515.6757133-6885-210430398969058 `" && echo ansible-tmp-1763700515.6757133-6885-210430398969058="` echo /home/student/.ansible/tmp/ansible-tmp-1763700515.6757133-6885-210430398969058 `" ) && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'ansible-tmp-1763700515.6757133-6885-210430398969058=/home/student/.ansible/tmp/ansible-tmp-1763700515.6757133-6885-210430398969058\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/file.py
+<myvmlab.senecapolytechnic.ca> PUT /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmpy9yubjgd TO /home/student/.ansible/tmp/ansible-tmp-1763700515.6757133-6885-210430398969058/AnsiballZ_file.py
+<myvmlab.senecapolytechnic.ca> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' '[myvmlab.senecapolytechnic.ca]'
+<myvmlab.senecapolytechnic.ca> (0, b'sftp> put /home/mdixon21/.ansible/tmp/ansible-local-68123eddeh0_/tmpy9yubjgd /home/student/.ansible/tmp/ansible-tmp-1763700515.6757133-6885-210430398969058/AnsiballZ_file.py\n', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'chmod u+x /home/student/.ansible/tmp/ansible-tmp-1763700515.6757133-6885-210430398969058/ /home/student/.ansible/tmp/ansible-tmp-1763700515.6757133-6885-210430398969058/AnsiballZ_file.py && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' -tt myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-bxwmnadjywmbnfupeolajclllkpqsmzp ; /usr/bin/python3 /home/student/.ansible/tmp/ansible-tmp-1763700515.6757133-6885-210430398969058/AnsiballZ_file.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<myvmlab.senecapolytechnic.ca> (0, b'\r\n{"path": "/home/mdixon21/ops445/lab8", "changed": true, "diff": {"before": {"path": "/home/mdixon21/ops445/lab8", "state": "absent", "owner": 0, "group": 0}, "after": {"path": "/home/mdixon21/ops445/lab8", "state": "directory", "owner": 1006, "group": 1006}}, "uid": 1006, "gid": 1006, "owner": "mdixon21", "group": "mdixon21", "mode": "0755", "state": "directory", "size": 6, "invocation": {"module_args": {"path": "/home/mdixon21/ops445/lab8", "state": "directory", "owner": "mdixon21", "group": "mdixon21", "mode": "0755", "recurse": false, "force": false, "follow": true, "modification_time_format": "%Y%m%d%H%M.%S", "access_time_format": "%Y%m%d%H%M.%S", "unsafe_writes": false, "_original_basename": null, "_diff_peek": null, "src": null, "modification_time": null, "access_time": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null}}}\r\n', b'Shared connection to myvmlab.senecapolytechnic.ca closed.\r\n')
+<myvmlab.senecapolytechnic.ca> ESTABLISH SSH CONNECTION FOR USER: student
+<myvmlab.senecapolytechnic.ca> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o Port=7662 -o 'IdentityFile="/home/mdixon21/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="student"' -o ConnectTimeout=10 -o 'ControlPath="/home/mdixon21/.ansible/cp/04945b1a2c"' myvmlab.senecapolytechnic.ca '/bin/sh -c '"'"'rm -f -r /home/student/.ansible/tmp/ansible-tmp-1763700515.6757133-6885-210430398969058/ > /dev/null 2>&1 && sleep 0'"'"''
+<myvmlab.senecapolytechnic.ca> (0, b'', b'')
+changed: [myvm] => (item=8) => {
+    "ansible_loop_var": "item",
+    "changed": true,
+    "diff": {
+        "after": {
+            "group": 1006,
+            "owner": 1006,
+            "path": "/home/mdixon21/ops445/lab8",
+            "state": "directory"
+        },
+        "before": {
+            "group": 0,
+            "owner": 0,
+            "path": "/home/mdixon21/ops445/lab8",
+            "state": "absent"
+        }
+    },
+    "gid": 1006,
+    "group": "mdixon21",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "follow": true,
+            "force": false,
+            "group": "mdixon21",
+            "mode": "0755",
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": "mdixon21",
+            "path": "/home/mdixon21/ops445/lab8",
+            "recurse": false,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": false
+        }
+    },
+    "item": 8,
+    "mode": "0755",
+    "owner": "mdixon21",
+    "path": "/home/mdixon21/ops445/lab8",
+    "size": 6,
+    "state": "directory",
+    "uid": 1006
+}
+
+PLAY RECAP *********************************************************************
+myvm                       : ok=9    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
